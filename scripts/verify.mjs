@@ -7,35 +7,58 @@ const required = [
   ".gitattributes",
   "assets/cad-guardian-logo-highlighted.png",
   "docs/STAR.md",
-  "docs/API_WALKTHROUGH.md",
-  "docs/NATIVE_RUNTIME.md",
-  "docs/INTERVIEW_SCRIPT.md",
+  "docs/USER_GUIDE.md",
+  "docs/RUNTIME_GUIDE.md",
+  "docs/API_REFERENCES.md",
   "docs/EXPECTED_OUTCOME.md",
-  "samples/manifest/agentops-proof-packet.json",
-  "samples/manifest/source-inventory.json",
-  "samples/manifest/fixture-attribution.json",
-  "samples/input/request.json",
+  "docs/INTERVIEW_SCRIPT.md",
   "quickstart/Program.cs",
   "quickstart/quickstart.csproj",
-  "src/adapter/index.mjs",
   "scripts/doctor.mjs",
-  "scripts/runtime-check.mjs"
+  "scripts/verify.mjs",
+  "scripts/runtime-check.mjs",
+  "scripts/sanitize.mjs",
+  "native/autolisp/CADG_LAYER_AUDIT.lsp",
+  "native/autocad-dotnet/CadGuardianCommand.cs",
+  "fixtures/public/gdal/assorted.dxf",
+  "fixtures/public/gdal/text.dxf",
+  "fixtures/public/gdal/line_r2000.dwg"
 ];
 const allowedFixturePaths = new Set([
   "fixtures/public/gdal/assorted.dxf",
   "fixtures/public/gdal/text.dxf",
   "fixtures/public/gdal/line_r2000.dwg"
 ]);
-const publicFixtureExtensions = new Set([
-  ".dgn",
-  ".dwg",
-  ".dxf",
-  ".ifc",
-  ".ipt",
-  ".sldprt",
-  ".step",
-  ".stp"
+const ignoredDirs = new Set([".git", "node_modules", "bin", "obj"]);
+const allowedTopLevel = new Set([
+  ".gitattributes",
+  ".gitignore",
+  ".nojekyll",
+  "LICENSE",
+  "README.md",
+  "assets",
+  "docs",
+  "fixtures",
+  "index.html",
+  "native",
+  "package.json",
+  "quickstart",
+  "reports",
+  "scripts"
 ]);
+const forbiddenRoots = ["samples", "src"];
+const forbiddenDocNames = new Set([
+  "API_WALKTHROUGH.md",
+  "DEVELOPMENT_PREVIEW.md",
+  "NATIVE_RUNTIME.md",
+  "architecture.md",
+  "code-walkthrough.md",
+  "runbook.md",
+  "sanitization-checklist.md",
+  "source-attribution.md",
+  "story.md"
+]);
+const publicFixtureExtensions = new Set([".dgn", ".dwg", ".dxf", ".ifc", ".ipt", ".sldprt", ".step", ".stp"]);
 const forbiddenStringParts = [
   ["Crown", "Castle"],
   ["Burns", "&", "McDonnell"],
@@ -54,7 +77,7 @@ function walk(root) {
     const path = join(root, entry);
     const stats = statSync(path);
     if (stats.isDirectory()) {
-      if (entry === ".git" || entry === "node_modules" || entry === "bin" || entry === "obj") continue;
+      if (ignoredDirs.has(entry)) continue;
       results.push(...walk(path));
     } else {
       results.push(path);
@@ -67,8 +90,17 @@ for (const file of required) {
   if (!existsSync(file)) throw new Error(`Missing required file: ${file}`);
 }
 
-for (const fixturePath of allowedFixturePaths) {
-  if (!existsSync(fixturePath)) throw new Error(`Missing bundled fixture: ${fixturePath}`);
+for (const entry of readdirSync(".")) {
+  if (!allowedTopLevel.has(entry) && !entry.startsWith(".")) {
+    throw new Error(`Top-level drag file/folder is not allowed: ${entry}`);
+  }
+  if (forbiddenRoots.includes(entry)) {
+    throw new Error(`Removed proof-packet folder came back: ${entry}`);
+  }
+}
+
+for (const doc of readdirSync("docs")) {
+  if (forbiddenDocNames.has(doc)) throw new Error(`Redundant doc should not exist: docs/${doc}`);
 }
 
 for (const file of walk(".")) {
@@ -87,9 +119,4 @@ for (const file of walk(".")) {
   }
 }
 
-JSON.parse(readFileSync("samples/manifest/agentops-proof-packet.json", "utf8"));
-JSON.parse(readFileSync("samples/manifest/source-inventory.json", "utf8"));
-JSON.parse(readFileSync("samples/manifest/fixture-attribution.json", "utf8"));
-JSON.parse(readFileSync("samples/input/request.json", "utf8"));
-
-console.log("Quick-start kit verification passed.");
+console.log("Pareto quick-start kit verification passed.");

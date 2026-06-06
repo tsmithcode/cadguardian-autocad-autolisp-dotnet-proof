@@ -2,15 +2,20 @@
 
 ## Public runtime
 
-- Node.js for repo verification and synthetic demo.
-- .NET 10 for the C# quickstart.
-- No licensed CAD software required.
+The default kit runs with local .NET and does not require licensed CAD software.
 
-## Optional native runtime
+```bash
+dotnet run --project quickstart
+```
 
-Use C# for package validation, AutoLISP for command automation, and AutoCAD .NET when typed DWG object access is required.
+## Native runtime
 
-## Native/API examples
+Use C# for package validation, AutoLISP for command-level drafting automation, and AutoCAD .NET when typed DWG object access is required.
 
-- native/autolisp/CADG_LAYER_AUDIT.lsp
-- native/autocad-dotnet/CadGuardianCommand.cs
+Native examples are intentionally optional. They should be used only inside the matching licensed CAD environment after the package boundary is proven.
+
+## Native handoff points
+
+- **Layer and entity inventory:** AutoLISP `tblsearch` / `ssget`, then AutoCAD .NET `LayerTable` and `BlockTableRecord`.
+- **Text and title-block surface:** AutoLISP `entget`, AutoCAD .NET `DBText`, `MText`, and `AttributeReference`.
+- **DWG native runtime gate:** Licensed AutoCAD desktop worker, AutoLISP routine, or managed .NET command.
