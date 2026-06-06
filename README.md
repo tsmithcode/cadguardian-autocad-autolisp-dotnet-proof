@@ -10,6 +10,14 @@ CAD Guardian Pareto quick-start automation kit for drafters, CAD automation peer
 
 > This CAD library is in development. This is an early public preview for feedback on the best business case, workflow shape, and proof path.
 
+## Live site
+
+- GitHub Pages: https://tsmithcode.github.io/cadguardian-autocad-autolisp-dotnet-proof/
+- Download ZIP: https://github.com/tsmithcode/cadguardian-autocad-autolisp-dotnet-proof/archive/refs/heads/main.zip
+- CAD Guardian: https://www.cadguardian.com/
+- TSmithCode.ai: https://www.tsmithcode.ai/
+- Service page: https://www.cadguardian.com/services/autocad-autolisp-dotnet
+
 ## Why this exists
 
 Find the first repeated drawing-package check worth automating, then keep DWG mutation inside an AutoCAD runtime until layers, text, attributes, plots, and review rules are proven.
@@ -68,7 +76,3 @@ dotnet build quickstart
 ## Public fixture boundary
 
 Only approved public sample files are bundled. No client files, private drawings, credentials, raw opportunity notes, or license-uncertain CAD assets are included.
-
-## Service page
-
-https://www.cadguardian.com/services/autocad-autolisp-dotnet
