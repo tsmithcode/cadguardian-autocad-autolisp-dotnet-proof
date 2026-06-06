@@ -1,12 +1,19 @@
 import { existsSync } from "node:fs";
 
 const runtimeHints = [
-  "AutoCAD",
-  "AutoLISP",
-  "AutoCAD .NET",
-  "ObjectARX",
-  "DXF/DWG",
-  "API job boundary"
+  "ssget",
+  "entget",
+  "tblsearch",
+  "entmod",
+  "command",
+  "Document",
+  "Database",
+  "Transaction",
+  "BlockTable",
+  "BlockTableRecord",
+  "LayerTable",
+  "DBText",
+  "AttributeReference"
 ];
 const commonLocalHints = [
   "/Applications/Autodesk",
@@ -15,10 +22,9 @@ const commonLocalHints = [
   "C:/Program Files/SOLIDWORKS Corp",
   "C:/Program Files/Bentley",
 ];
-
 const visibleHints = commonLocalHints.filter((path) => existsSync(path));
 
-console.log("AutoCAD, AutoLISP, and .NET Automation Proof");
-console.log("Runtime vocabulary:", runtimeHints.join(", "));
+console.log("AutoCAD, AutoLISP, and .NET Quick-Start Automation Kit");
+console.log("API/native vocabulary:", runtimeHints.join(", "));
 console.log("Visible local runtime hints:", visibleHints.length > 0 ? visibleHints.join(", ") : "none detected");
-console.log("This check does not prove CAD execution. Native geometry, conversion, repair, or API execution requires a separate local tool receipt.");
+console.log("Public quickstart is runnable without licensed CAD. Native adapters require the matching local CAD/runtime environment.");

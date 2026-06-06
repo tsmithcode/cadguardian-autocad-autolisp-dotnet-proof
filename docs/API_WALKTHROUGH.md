@@ -1,4 +1,29 @@
-# API References
+# API Walkthrough
+
+## High-value API signals
+
+- ssget
+- entget
+- tblsearch
+- entmod
+- command
+- Document
+- Database
+- Transaction
+- BlockTable
+- BlockTableRecord
+- LayerTable
+- DBText
+- AttributeReference
+
+## What the public C# quickstart does
+
+- Reads the approved public fixture manifest.
+- Validates fixture presence, size, hash, and text-readable markers where the format supports it.
+- Writes `reports/quickstart-report.json`.
+- Names the native/API boundary without claiming licensed runtime execution.
+
+## Official references
 
 - [AutoCAD API overview](https://aps.autodesk.com/developer/overview/autocad-api) - AutoCAD automation and API positioning.
 - [AutoCAD ObjectARX, .NET, and AutoLISP help](https://help.autodesk.com/view/OARX/2025/ENU/) - Managed .NET, ObjectARX, and AutoLISP runtime vocabulary.

@@ -1,33 +1,50 @@
 {
-  "requestId": "cadg-acad-demo-001",
-  "runtimeDecision": "AutoLISP command first, AutoCAD .NET wrapper only when typed object access is required.",
+  "requestId": "cadg-acad-kit-001",
+  "kitType": "CAD Guardian quick-start automation kit",
+  "repo": "tsmithcode/cadguardian-autocad-autolisp-dotnet-proof",
+  "runtimeDecision": "Use C# for package validation, AutoLISP for command automation, and AutoCAD .NET when typed DWG object access is required.",
+  "apiSignals": [
+    "ssget",
+    "entget",
+    "tblsearch",
+    "entmod",
+    "command",
+    "Document",
+    "Database",
+    "Transaction",
+    "BlockTable",
+    "BlockTableRecord",
+    "LayerTable",
+    "DBText",
+    "AttributeReference"
+  ],
   "expectedOutputs": [
-    "updated drawing package",
-    "PDF preview",
-    "validation report",
-    "review flags"
+    "drawing-package-report",
+    "fixture receipts",
+    "runtime decision",
+    "native adapter notes"
   ],
   "validation": [
     {
-      "rule": "required layers named",
+      "rule": "DXF/DWG fixtures are present and attributed",
       "status": "review-ready",
-      "evidence": "Synthetic fixture only. Run local CAD checks against AgentOps-approved source files for tool receipts."
+      "evidence": "Public quick-start kit fixture, API walkthrough, or native adapter example is present."
     },
     {
-      "rule": "title block fields present",
+      "rule": "DXF text fixture exposes SECTION or ENTITIES markers",
       "status": "review-ready",
-      "evidence": "Synthetic fixture only. Run local CAD checks against AgentOps-approved source files for tool receipts."
+      "evidence": "Public quick-start kit fixture, API walkthrough, or native adapter example is present."
     },
     {
-      "rule": "plot package created",
+      "rule": "Layer/title-block expectations are represented as review checks",
       "status": "review-ready",
-      "evidence": "Synthetic fixture only. Run local CAD checks against AgentOps-approved source files for tool receipts."
+      "evidence": "Public quick-start kit fixture, API walkthrough, or native adapter example is present."
     },
     {
-      "rule": "skipped assumptions reported",
+      "rule": "AutoLISP and AutoCAD .NET adapter handoff is documented",
       "status": "review-ready",
-      "evidence": "Synthetic fixture only. Run local CAD checks against AgentOps-approved source files for tool receipts."
+      "evidence": "Public quick-start kit fixture, API walkthrough, or native adapter example is present."
     }
   ],
-  "publicBoundary": "No private client files, login material, raw opportunity notes, or catalog-only native CAD binaries are included."
+  "publicBoundary": "No private client files, login material, raw opportunity notes, or license-uncertain CAD assets are included."
 }

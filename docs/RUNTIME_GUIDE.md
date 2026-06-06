@@ -1,33 +1,16 @@
 # Runtime Guide
 
-## Default public runtime
+## Public runtime
 
-The default runtime is Node.js plus synthetic fixtures:
+- Node.js for repo verification and synthetic demo.
+- .NET 10 for the C# quickstart.
+- No licensed CAD software required.
 
-```bash
-npm run doctor
-npm run verify
-npm run demo
-```
+## Optional native runtime
 
-Expected output: `reports/demo-validation-report.json`.
+Use C# for package validation, AutoLISP for command automation, and AutoCAD .NET when typed DWG object access is required.
 
-## Optional native/runtime path
+## Native/API examples
 
-Run:
-
-```bash
-npm run runtime:check
-```
-
-This command only reports visible local runtime hints. It does not prove CAD execution.
-
-## Runtime decision for this proof
-
-AutoLISP command first, AutoCAD .NET wrapper only when typed object access is required.
-
-## AgentOps boundary
-
-GDAL MIT DXF samples and catalog-only DWG references stay in the AgentOps public CAD library. This repo includes manifests and synthetic job data, not raw DWG files.
-
-Native CAD files, private client material, credentials, source-system exports, and raw opportunity notes stay outside this public repo.
+- native/autolisp/CADG_LAYER_AUDIT.lsp
+- native/autocad-dotnet/CadGuardianCommand.cs

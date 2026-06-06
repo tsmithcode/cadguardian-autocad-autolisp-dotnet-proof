@@ -1,19 +1,40 @@
-export function chooseRuntime(job) {
-  const needsTypedAccess = job.validationRules.some((rule) => rule.includes('title block'));
-  return needsTypedAccess ? 'AutoCAD .NET adapter' : 'AutoLISP command surface';
-}
-
-
 export function runAdapter(job) {
   return {
     requestId: job.requestId,
+    kitType: "CAD Guardian quick-start automation kit",
+    repo: "tsmithcode/cadguardian-autocad-autolisp-dotnet-proof",
     runtimeDecision: job.runtimeDecision,
-    expectedOutputs: job.expectedOutputs,
-    validation: job.validationRules.map((rule) => ({
+    apiSignals: [
+  "ssget",
+  "entget",
+  "tblsearch",
+  "entmod",
+  "command",
+  "Document",
+  "Database",
+  "Transaction",
+  "BlockTable",
+  "BlockTableRecord",
+  "LayerTable",
+  "DBText",
+  "AttributeReference"
+],
+    expectedOutputs: [
+  "drawing-package-report",
+  "fixture receipts",
+  "runtime decision",
+  "native adapter notes"
+],
+    validation: [
+  "DXF/DWG fixtures are present and attributed",
+  "DXF text fixture exposes SECTION or ENTITIES markers",
+  "Layer/title-block expectations are represented as review checks",
+  "AutoLISP and AutoCAD .NET adapter handoff is documented"
+].map((rule) => ({
       rule,
       status: "review-ready",
-      evidence: "Synthetic fixture only. Run local CAD checks against AgentOps-approved source files for tool receipts.",
+      evidence: "Public quick-start kit fixture, API walkthrough, or native adapter example is present.",
     })),
-    publicBoundary: "No private client files, login material, raw opportunity notes, or catalog-only native CAD binaries are included.",
+    publicBoundary: "No private client files, login material, raw opportunity notes, or license-uncertain CAD assets are included.",
   };
 }

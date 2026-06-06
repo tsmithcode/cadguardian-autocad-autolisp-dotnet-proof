@@ -1,17 +1,34 @@
 {
-  "requestId": "cadg-acad-demo-001",
-  "drawingPackage": "demo-equipment-layout",
-  "runtimeDecision": "AutoLISP command first, AutoCAD .NET wrapper only when typed object access is required.",
-  "expectedOutputs": [
-    "updated drawing package",
-    "PDF preview",
-    "validation report",
-    "review flags"
+  "requestId": "cadg-acad-kit-001",
+  "workflowClass": "drawing-package-validation",
+  "runtimeDecision": "Use C# for package validation, AutoLISP for command automation, and AutoCAD .NET when typed DWG object access is required.",
+  "reviewOwner": "CAD manager",
+  "kitType": "CAD Guardian quick-start automation kit",
+  "apiSignals": [
+    "ssget",
+    "entget",
+    "tblsearch",
+    "entmod",
+    "command",
+    "Document",
+    "Database",
+    "Transaction",
+    "BlockTable",
+    "BlockTableRecord",
+    "LayerTable",
+    "DBText",
+    "AttributeReference"
   ],
   "validationRules": [
-    "required layers named",
-    "title block fields present",
-    "plot package created",
-    "skipped assumptions reported"
+    "DXF/DWG fixtures are present and attributed",
+    "DXF text fixture exposes SECTION or ENTITIES markers",
+    "Layer/title-block expectations are represented as review checks",
+    "AutoLISP and AutoCAD .NET adapter handoff is documented"
+  ],
+  "expectedOutputs": [
+    "drawing-package-report",
+    "fixture receipts",
+    "runtime decision",
+    "native adapter notes"
   ]
 }

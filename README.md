@@ -1,71 +1,69 @@
-# AutoCAD, AutoLISP, and .NET Automation Proof
+# AutoCAD, AutoLISP, and .NET Quick-Start Automation Kit
 
-CAD Guardian proof repo for technical interviews, buyer reviews, and peer walkthroughs.
+CAD Guardian quick-start automation kit for peer walkthroughs, technical interviews, and buyer-facing business-case discussions.
 
 > This CAD library is in development. This is an early public preview for feedback on the best business case, workflow shape, and proof path.
 
-## Story
-A technical buyer asks whether a trusted AutoCAD routine can become a governed service path without breaking layers, blocks, attributes, plots, or drafter trust.
+## STAR story
 
-## Business case
-The useful slice is not a broad CAD platform rebuild. It is a request package, a command/runtime boundary, a validation report, and a handoff a drafter can inspect.
+**Situation:** A CAD team has trusted AutoCAD routines, but standards, layers, attributes, plots, and support paths are too fragile to automate blindly.
 
-## Workflow
-- Order or workflow request
-- Job API contract
-- DXF/DWG source inventory
-- AutoLISP command surface
-- AutoCAD .NET adapter boundary
-- Validation report
-- Drafter review
-- Accepted or corrected output
+**Task:** Create a public-safe quickstart that proves a request package can be validated before a native AutoLISP or AutoCAD .NET adapter changes drawings.
 
-## Stack vocabulary
-- AutoCAD
-- AutoLISP
-- AutoCAD .NET
-- ObjectARX
-- DXF/DWG
-- API job boundary
+**Action:** Scan approved GDAL DXF/DWG fixtures, classify runtime needs, produce validation checks, and show native command scaffolds for AutoLISP and AutoCAD .NET.
 
-## Run
+**Result:** Peers and technical interviewers can run the public kit, inspect the report, then discuss where a licensed AutoCAD runtime would take over.
+
+## Fast run
 
 ```bash
 npm run doctor
 npm run verify
 npm run demo
-npm run sanitize
+dotnet build quickstart
+dotnet run --project quickstart
 ```
 
-Expected demo output: `reports/demo-validation-report.json` with a review-ready status, validation checks, stop conditions, and the public CAD data boundary.
+The C# quickstart writes `reports/quickstart-report.json`. The Node demo writes `reports/demo-validation-report.json`.
 
-## Runtime model
-This repo is tiered:
+## What is included
 
-- Public demo: runs anywhere with Node.js and synthetic fixtures.
-- Optional native/runtime check: `npm run runtime:check` reports whether local CAD/API tooling appears available.
-- Real CAD files: stay in an AgentOps-controlled private library unless explicitly approved for a private runtime receipt.
+- Runnable C# quickstart in `quickstart/`.
+- Optional native/runtime examples in `native/`.
+- Safe public fixtures in `fixtures/public/`.
+- STAR story, API walkthrough, native runtime notes, interview script, and expected outcome docs.
 
-## Guides
-- [User guide](docs/USER_GUIDE.md)
-- [Runtime guide](docs/RUNTIME_GUIDE.md)
-- [API references](docs/API_REFERENCES.md)
-- [Expected outcome](docs/EXPECTED_OUTCOME.md)
-- [Development preview warning](docs/DEVELOPMENT_PREVIEW.md)
+## Workflow
 
-## Official references
-- [Autodesk APS Automation APIs](https://aps.autodesk.com/automation-apis) - Cloud-compatible batch automation and work-item framing.
-- [AutoCAD API overview](https://aps.autodesk.com/developer/overview/autocad-api) - AutoCAD API surface and automation positioning.
-- [AutoCAD ObjectARX, .NET, and AutoLISP help](https://help.autodesk.com/view/OARX/2025/ENU/) - AutoLISP, managed .NET, and ObjectARX runtime vocabulary.
-- [AWS API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) - API front door, status endpoints, and service boundary discussion.
-- [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html) - State-machine orchestration, retries, and staged workflow discussion.
-- [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview) - Event-driven job/API shape when the platform standard is Azure.
-- [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) - Queue and service-bus vocabulary for async CAD work.
+- Order or workflow request
+- DXF/DWG fixture inventory
+- Layer and text validation
+- AutoLISP command decision
+- AutoCAD .NET adapter decision
+- Drawing package report
+- Drafter review
+- Accepted or corrected output
 
-## Public CAD data boundary
-GDAL MIT DXF samples and catalog-only DWG references stay in the AgentOps public CAD library. This repo includes manifests and synthetic job data, not raw DWG files.
+## API and runtime signals
 
-This repository is built for public proof. It includes source inventory manifests, synthetic input fixtures, validation examples, and adapter code shaped for walkthroughs. It does not include private drawings, proprietary project files, login material, raw opportunity notes, or native CAD files that AgentOps marks catalog-only.
+- ssget
+- entget
+- tblsearch
+- entmod
+- command
+- Document
+- Database
+- Transaction
+- BlockTable
+- BlockTableRecord
+- LayerTable
+- DBText
+- AttributeReference
 
-## Related service page
+## Public fixture boundary
+
+Only approved public sample files are bundled. No client files, private drawings, credentials, raw opportunity notes, or license-uncertain CAD assets are included.
+
+## Service page
+
 https://www.cadguardian.com/services/autocad-autolisp-dotnet
