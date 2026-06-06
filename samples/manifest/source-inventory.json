@@ -1,0 +1,28 @@
+{
+  "policy": "GDAL MIT DXF samples and catalog-only DWG references stay in the AgentOps public CAD library. This repo includes manifests and synthetic job data, not raw DWG files.",
+  "filesAreBundled": false,
+  "reason": "AgentOps policy blocks raw CAD cloud upload. Public proof references approved library sources and uses synthetic fixtures.",
+  "sources": [
+    {
+      "sourceId": "gdal_cad_dgn_dxf_samples",
+      "relativePath": "raw/gdal_cad_dgn_dxf_samples/autotest/ogr/data/dxf/assorted.dxf",
+      "format": "DXF",
+      "usage": "Browser-viewable reference for layer/entity validation examples.",
+      "publicUse": "Reference only. Fetch from source library when running local CAD checks."
+    },
+    {
+      "sourceId": "gdal_cad_dgn_dxf_samples",
+      "relativePath": "raw/gdal_cad_dgn_dxf_samples/autotest/ogr/data/dxf/text.dxf",
+      "format": "DXF",
+      "usage": "Text/entity validation fixture.",
+      "publicUse": "Reference only."
+    },
+    {
+      "sourceId": "gdal_cad_dgn_dxf_samples",
+      "relativePath": "raw/gdal_cad_dgn_dxf_samples/autotest/ogr/data/cad/line_r2000.dwg",
+      "format": "DWG",
+      "usage": "Catalog-only DWG reference for runtime selection discussion.",
+      "publicUse": "Do not bundle native CAD in public repo."
+    }
+  ]
+}

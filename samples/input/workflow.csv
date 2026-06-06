@@ -1,0 +1,9 @@
+step,owner,evidence
+1,Order or workflow request,review note
+2,Job API contract,review note
+3,DXF/DWG source inventory,review note
+4,AutoLISP command surface,review note
+5,AutoCAD .NET adapter boundary,review note
+6,Validation report,review note
+7,Drafter review,review note
+8,Accepted or corrected output,review note

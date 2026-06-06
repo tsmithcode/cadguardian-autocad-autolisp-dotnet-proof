@@ -1,0 +1,33 @@
+{
+  "requestId": "cadg-acad-demo-001",
+  "status": "review-ready",
+  "decision": "Use this repo to discuss workflow, runtime, validation, and handoff before touching private files.",
+  "checks": [
+    {
+      "rule": "required layers named",
+      "result": "sample-pass",
+      "evidence": "Synthetic fixture and manifest-backed source reference."
+    },
+    {
+      "rule": "title block fields present",
+      "result": "sample-pass",
+      "evidence": "Synthetic fixture and manifest-backed source reference."
+    },
+    {
+      "rule": "plot package created",
+      "result": "sample-pass",
+      "evidence": "Synthetic fixture and manifest-backed source reference."
+    },
+    {
+      "rule": "skipped assumptions reported",
+      "result": "sample-pass",
+      "evidence": "Synthetic fixture and manifest-backed source reference."
+    }
+  ],
+  "stopConditions": [
+    "Missing accepted output example.",
+    "Runtime cannot produce a local tool receipt.",
+    "Reviewer cannot name the owner of an exception.",
+    "Requested proof requires private files in a public repo."
+  ]
+}

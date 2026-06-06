@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "cadg.public_proof_packet.1",
+  "repo": "tsmithcode/cadguardian-autocad-autolisp-dotnet-proof",
+  "title": "AutoCAD, AutoLISP, and .NET Automation Proof",
+  "servicePath": "https://www.cadguardian.com/services/autocad-autolisp-dotnet",
+  "story": "A technical buyer asks whether a trusted AutoCAD routine can become a governed service path without breaking layers, blocks, attributes, plots, or drafter trust.",
+  "workflow": [
+    "Order or workflow request",
+    "Job API contract",
+    "DXF/DWG source inventory",
+    "AutoLISP command surface",
+    "AutoCAD .NET adapter boundary",
+    "Validation report",
+    "Drafter review",
+    "Accepted or corrected output"
+  ],
+  "stack": [
+    "AutoCAD",
+    "AutoLISP",
+    "AutoCAD .NET",
+    "ObjectARX",
+    "DXF/DWG",
+    "API job boundary"
+  ],
+  "publicBoundary": "Public packet contains synthetic fixtures, source manifests, code scaffolds, and validation posture only.",
+  "agentOpsPolicy": {
+    "noSourceMutation": true,
+    "noCloudUploadOfRawCad": true,
+    "rawCadBinariesToAi": false,
+    "catalogOnlyFormats": [
+      ".dgn",
+      ".dwg",
+      ".iam",
+      ".idw",
+      ".ipt",
+      ".rfa",
+      ".rvt",
+      ".sldasm",
+      ".slddrw",
+      ".sldprt"
+    ]
+  }
+}

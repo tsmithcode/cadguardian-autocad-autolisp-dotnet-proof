@@ -1,0 +1,17 @@
+{
+  "requestId": "cadg-acad-demo-001",
+  "drawingPackage": "demo-equipment-layout",
+  "runtimeDecision": "AutoLISP command first, AutoCAD .NET wrapper only when typed object access is required.",
+  "expectedOutputs": [
+    "updated drawing package",
+    "PDF preview",
+    "validation report",
+    "review flags"
+  ],
+  "validationRules": [
+    "required layers named",
+    "title block fields present",
+    "plot package created",
+    "skipped assumptions reported"
+  ]
+}
