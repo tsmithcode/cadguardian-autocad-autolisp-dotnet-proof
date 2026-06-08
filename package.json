@@ -1,6 +1,17 @@
 {
   "name": "cadguardian-autocad-autolisp-dotnet-proof",
   "version": "3.0.0",
+  "description": "CAD Guardian public runnable AutoCAD, AutoLISP, and .NET evaluation kit for drawing package automation consulting.",
+  "keywords": [
+    "cadguardian",
+    "cad-automation",
+    "autocad",
+    "autolisp",
+    "dotnet",
+    "drawing-automation",
+    "naics-541512",
+    "sic-7373"
+  ],
   "private": false,
   "type": "module",
   "scripts": {

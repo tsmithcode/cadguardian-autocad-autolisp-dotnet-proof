@@ -1,22 +1,32 @@
 <p align="left">
-  <a href="https://www.cadguardian.com/services/autocad-autolisp-dotnet">
+  <a href="https://www.cadguardian.com/autocad-automation-consulting">
     <img src="assets/cad-guardian-logo-highlighted.png" alt="CAD Guardian logo" width="120">
   </a>
 </p>
 
-# AutoCAD, AutoLISP, and .NET Proof Repo
+# AutoCAD, AutoLISP, and .NET Public Runnable Evaluation Kit
 
-Direct service lane: [AutoCAD AutoLISP .NET automation](https://www.cadguardian.com/services/autocad-autolisp-dotnet)
+Canonical consulting path: [AutoCAD automation consulting](https://www.cadguardian.com/autocad-automation-consulting)
 
 Live proof page: [GitHub Pages](https://tsmithcode.github.io/cadguardian-autocad-autolisp-dotnet-proof/) | [Download ZIP](https://github.com/tsmithcode/cadguardian-autocad-autolisp-dotnet-proof/archive/refs/heads/main.zip) | [CAD Guardian](https://www.cadguardian.com/) | [TSmithCode.ai](https://www.tsmithcode.ai/)
 
-This public proof repo shows how CAD Guardian evaluates an AutoCAD automation opportunity before any private drawing is touched. It scans approved public DXF/DWG fixtures, reports layer/entity and text/title-block evidence, and keeps DWG mutation behind a licensed AutoCAD native runtime gate.
+This public runnable evaluation kit shows how CAD Guardian evaluates an AutoCAD automation opportunity before any private drawing is touched. It scans approved public DXF/DWG fixtures, reports layer/entity and text/title-block evidence, and keeps DWG mutation behind a licensed AutoCAD native runtime gate.
+
+## CAD Guardian procurement fit
+
+- Legal/procurement entity: CAD Guardian LLC, Delaware LLC.
+- Primary classification: NAICS 541512 Computer Systems Design Services; SIC 7373 Computer Integrated Systems Design.
+- Secondary implementation fit: NAICS 541511 Custom Computer Programming Services when the engagement includes custom software, API, desktop, reporting, or integration work.
+- Public offer fit: Drawing/Document Automation Slice; Quote Automation Prototype; Implementation Build Slice.
+- Canonical consulting path: [AutoCAD automation consulting](https://www.cadguardian.com/autocad-automation-consulting).
+- Public runnable proof kit available; private customer artifacts are not exposed.
+- GitHub social preview asset: `assets/github-social-preview.png` with SVG source at `assets/github-social-preview.svg`.
 
 ## Best for
 
 - CAD managers deciding whether a repeated drawing-package check is ready for automation.
 - Technical evaluators who want evidence of AutoCAD, AutoLISP, and .NET judgment before sharing private files.
-- Recruiters or buyers who need a fast proof artifact with commands, report output, source boundaries, and native-runtime limits.
+- Procurement buyers and technical reviewers who need a fast proof artifact with commands, report output, source boundaries, and native-runtime limits.
 
 ## Decision this proves
 
@@ -89,7 +99,7 @@ Do not send credentials, private notes, unapproved CAD fixtures, or client files
 
 ## Related CAD Guardian page
 
-[AutoCAD AutoLISP .NET automation service](https://www.cadguardian.com/services/autocad-autolisp-dotnet)
+[AutoCAD automation consulting](https://www.cadguardian.com/autocad-automation-consulting)
 
 ## Native runtime boundary
 
